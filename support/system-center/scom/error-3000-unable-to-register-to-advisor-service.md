@@ -122,3 +122,7 @@ FormatTracing.cmd
 After you're able to collect formatted traces, open the trace log file that's named TracingGuidsAdvisor.log, and then look for errors that resemble the following:
 
 > [Microsoft.SystemCenter.Advisor.Common] [] [Error] :WebServiceCallHelper.CallWebService\<T>{webservicecallhelper_cs66}Message security was invalid for the connection with web service when performing Register Gateway [Exception] System.ServiceModel.Security.MessageSecurityException: The security timestamp is stale because its expiration time ('2015-08-28T17:56:34.018Z') is in the past. Current time is '2015-08-28T18:03:27.962Z' and allowed clock skew is '00:05:00'.
+
+Error: "An error occurred while making the HTTP request to <Opsinsights URL>. This could be due to the fact that the server certificate is not configured properly with HTTP.SYS in the HTTPS case. This could also be caused by a mismatch of the security binding between the client and the server."
+  
+Solution: Implement TLS1.2 for your SCOM management servers per Kevin Holmans article at: https://kevinholman.com/2018/05/06/implementing-tls-1-2-enforcement-with-scom/
